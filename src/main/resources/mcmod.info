@@ -1,0 +1,16 @@
+[
+{
+  "modid": "bcfe",
+  "name": "BuildCraft FE Adapter",
+  "description": "Converts Buildcraft MJ to RF",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Irgendwer"],
+  "credits": "all credits got to DBotThePony for creating the mod this mod is based on.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
