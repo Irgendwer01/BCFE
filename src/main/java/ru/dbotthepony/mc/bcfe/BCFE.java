@@ -43,7 +43,7 @@ import ru.dbotthepony.mc.bcfe.BCFEConfig;
 public class BCFE {
 	public static final String MODID = "bcfe";
 	public static final String NAME = "BuildCraft FE Adapter";
-	public static final String VERSION = "1.0";
+	public static final String VERSION = "1.1";
 
 	public ResourceLocation resourceLocation;
 	public static Logger logger;
