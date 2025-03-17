@@ -25,6 +25,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.energy.CapabilityEnergy;
+import org.jetbrains.annotations.NotNull;
 import ru.dbotthepony.mc.bcfe.BCFE;
 
 public class EnergyProviderMJ implements ICapabilityProvider {
@@ -63,7 +64,7 @@ public class EnergyProviderMJ implements ICapabilityProvider {
 	}
 
 	@Override
-	public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+	public boolean hasCapability(@NotNull Capability<?> capability, EnumFacing facing) {
 		if (ignore) {
 			return false;
 		}
@@ -96,7 +97,7 @@ public class EnergyProviderMJ implements ICapabilityProvider {
 	}
 
 	@Override
-	public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
+	public <T> T getCapability(@NotNull Capability<T> capability, EnumFacing facing) {
 		if (ignore) {
 			return null;
 		}

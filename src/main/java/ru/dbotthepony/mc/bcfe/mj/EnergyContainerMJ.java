@@ -29,7 +29,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.energy.IEnergyStorage;
 import ru.dbotthepony.mc.bcfe.BCFE;
 
-class EnergyContainerMJ implements IEnergyStorage {
+public class EnergyContainerMJ implements IEnergyStorage {
 	protected final TileEntity upvalue;
 	EnumFacing face = EnumFacing.SOUTH;
 

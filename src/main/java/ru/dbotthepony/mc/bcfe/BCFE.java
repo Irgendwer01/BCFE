@@ -32,17 +32,13 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import ru.dbotthepony.mc.bcfe.mj.EnergyProviderMJ;
-import ru.dbotthepony.mc.bcfe.BCFEConfig;
 
 @Mod(
-	modid = BCFE.MODID,
-	name = BCFE.NAME,
-	dependencies = "after:buildcraft;",
-	version = BCFE.VERSION)
+	modid = Tags.MODID,
+	name = Tags.MODNAME,
+	dependencies = "after-required:buildcraftcore;",
+	version = Tags.VERSION)
 public class BCFE {
-	public static final String MODID = "bcfe";
-	public static final String NAME = "BuildCraft FE Adapter";
-	public static final String VERSION = "1.1";
 
 	public ResourceLocation resourceLocation;
 	public static Logger logger;
@@ -53,7 +49,7 @@ public class BCFE {
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		resourceLocation = new ResourceLocation(BCFE.MODID, "fecapability");
+		resourceLocation = new ResourceLocation(Tags.MODID, "fecapability");
 		logger = event.getModLog();
 	}
 

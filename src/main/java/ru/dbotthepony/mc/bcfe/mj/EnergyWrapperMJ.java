@@ -27,6 +27,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
+import org.jetbrains.annotations.NotNull;
 
 public class EnergyWrapperMJ implements IMjConnector, IMjPassiveProvider, IMjReadable, IMjReceiver {
 	protected final TileEntity upvalue;
@@ -45,16 +46,12 @@ public class EnergyWrapperMJ implements IMjConnector, IMjPassiveProvider, IMjRea
 	private boolean updateCapability(IEnergyStorage storage) {
 		this.container = storage;
 
-		if (storage == null) {
-			return false;
-		}
-
-		return true;
-	}
+        return storage != null;
+    }
 
 	boolean isValid() {
 		return this.upvalue.hasCapability(CapabilityEnergy.ENERGY, this.face)
-			? this.updateCapability(this.upvalue.getCapability(CapabilityEnergy.ENERGY, this.face)) : false;
+				&& this.updateCapability(this.upvalue.getCapability(CapabilityEnergy.ENERGY, this.face));
 	}
 
 	@Override
@@ -144,11 +141,7 @@ public class EnergyWrapperMJ implements IMjConnector, IMjPassiveProvider, IMjRea
 	}
 
 	@Override
-	public boolean canConnect(IMjConnector other) {
-		if (this.container == null) {
-			return false;
-		}
-
-		return true;
-	}
+	public boolean canConnect(@NotNull IMjConnector other) {
+        return this.container != null;
+    }
 }
